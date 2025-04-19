@@ -1,0 +1,1081 @@
+/* ✅ تنسيق الصفحة الأساسية */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f5f5f5;
+}
+
+/* ✅ شريط التنقل */
+.navbar {
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+.navbar-brand.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar-brand.logo:hover {
+  transform: scale(1.05);
+  color: #e0f7ff !important;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links .nav-item {
+  margin: 0 15px;
+}
+
+.nav-links .nav-link {
+  color: #ffffff !important;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links .nav-link:hover {
+  text-decoration: underline;
+  color: #e0f7ff !important;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px; /* زيادة الفجوة قليلاً لتحسين المظهر */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  width: 250px; /* زيادة العرض على الشاشات الكبيرة */
+}
+
+.search-box input {
+  padding: 8px; /* زيادة الحشوة لتحسين المظهر */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+  height: 40px; /* تحديد ارتفاع ثابت للحقل */
+  font-size: 16px; /* ضبط حجم الخط */
+}
+
+.search-box button {
+  padding: 8px 16px; /* ضبط الحشوة لتتناسب مع حقل الإدخال */
+  background-color: #01b2f8;
+  color: #ffffff !important;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  height: 40px; /* تحديد ارتفاع ثابت للزر */
+  width: 30%;
+  font-size: 16px; /* ضبط حجم الخط */
+  display: flex; /* استخدام flex لتمركز النص */
+  justify-content: center; /* تمركز أفقي */
+  align-items: center; /* تمركز عمودي */
+}
+
+.search-box button:hover {
+  background-color: white;
+  color: black !important;
+}
+
+/* ✅ تنسيق الفقرة التعريفية (Intro Section) */
+.intro-section {
+  text-align: center;
+  background: linear-gradient(45deg, #007bff, #00c3ff);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ✅ تنسيق السلايدر */
+#quizCarousel {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(6, 157, 228, 0.3);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+/* تغيير لون الأسهم في السلايدر */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%); /* تحويل اللون إلى الأسود */
+  width: 30px; /* ضبط حجم الأيقونة لتحسين الرؤية */
+  height: 30px;
+}
+
+/* تحسين الوضوح عند التمرير فوق الأسهم */
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0.7; /* جعل الأسهم مرئية بشكل أفضل */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1; /* زيادة الوضوح عند التمرير */
+}
+
+/* ✅ تنسيق المحتوى */
+.content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* ✅ ترتيب الفئات بحيث يكون كل اثنين بجانب بعض */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* تمركز الفئة الأخيرة إذا كانت في الصف الأخير */
+.categories > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  margin: 0 auto;
+  width: 100%; /* التأكد من أن البطاقة تأخذ العرض الكامل للعمود */
+  max-width: 450px; /* تحديد الحد الأقصى للعرض لتتناسب مع البطاقات الأخرى */
+}
+
+/* ✅ تنسيق كل مجال */
+.category {
+  background: rgb(202, 218, 233);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+  width: 100%; /* التأكد من أن جميع البطاقات تأخذ العرض الكامل للعمود */
+  box-sizing: border-box; /* ضمان أن الحشوة لا تؤثر على العرض */
+}
+
+.category img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.category h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.category p {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  min-height: 40px;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+/* تنسيق خاص لبطاقة السكريبت */
+.category-scriptwriting {
+  width: 100%; /* التأكد من أن البطاقة تأخذ العرض الكامل */
+  max-width: none; /* إزالة أي قيود على العرض */
+}
+/* ✅ تنسيق المحتوى */
+.content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.content h1 {
+  font-size: 40px; /* حجم العنوان */
+  margin-bottom: 40px; /* إضافة هامش سفلي لإنشاء مسافة بين العنوان والبطاقة */
+}
+
+/* تنسيق البطاقة في صفحة التسعير */
+.pricing-card {
+  background: rgb(202, 218, 233);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 20px; /* إضافة هامش علوي لضمان المسافة */
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+}
+
+/* تنسيق رأس البطاقة (لشخص واحد + مميز) */
+.pricing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.plan-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.badge {
+  background-color: #ffd700;
+  color: #333;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+/* تنسيق وصف الخدمة */
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* تنسيق السعر والمدة */
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 900;
+  color: #007bff;
+  margin: 0;
+}
+
+.duration {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* تنسيق زر "اطلب الآن" */
+.trial-btn {
+  background-color: #007bff; /* تغيير اللون إلى الأزرق */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.trial-btn:hover {
+  background-color: #0056b3;
+}
+
+/* تنسيق قائمة المميزات تحت البطاقة */
+.features-list {
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: right;
+}
+
+.features-list p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.features-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features-list li::before {
+  content: "✔";
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* ✅ تنسيق قسم الاختبار في quiz.html */
+.quiz-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.quiz-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.option-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #006eff;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.option-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.option-btn.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+#next-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#next-btn:hover {
+  background-color: #0056b3;
+}
+
+#next-btn:disabled {
+  background-color: #cfa3a3;
+  cursor: not-allowed;
+}
+
+/* ✅ تنسيق قسم النتيجة في result.html */
+.result-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.result-box h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.result-box h3 #score {
+  display: inline-block;
+  background: linear-gradient(45deg, #007bff, #00c3ff);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 15px;
+}
+
+.result-note {
+  font-size: 18px;
+  color: #555;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #c5fbff;
+  border-radius: 5px;
+  border: 1px solid #006eff;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* تنسيق زر "العب مرة أخرى" */
+.result-box button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.result-box button:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ تنسيق قسم النتائج في features.html */
+.results-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid #e0e0e0;
+}
+
+.results-box table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.results-box table th,
+.results-box table td {
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.results-box table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border-bottom: 2px solid #0056b3;
+}
+
+.results-box table td {
+  background-color: #ffffff;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.results-box table tr:hover td {
+  background-color: #f0f7ff;
+}
+
+.results-box table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.results-box table td:first-child {
+  font-weight: 500;
+  color: #007bff;
+}
+
+.results-box table td:last-child {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.results-box table tr:first-child th {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.results-box table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-box table td,
+.results-box table th {
+  direction: rtl;
+}
+
+.results-box table td:last-child {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* تنسيق زر حذف الإحصائيات */
+#clear-stats-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#clear-stats-btn:hover {
+  background-color: #c82333;
+}
+
+/* ✅ تنسيق الفوتر */
+.footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: black;
+}
+
+/* تنسيق النافذة المنبثقة */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h3 {
+  color: #d9534f;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* تضبيب الخلفية عند إظهار النافذة */
+body.modal-open .content {
+  filter: blur(5px);
+}
+
+/* تنسيق قسم About */
+.about-section {
+  padding: 50px 20px;
+}
+
+.about-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  direction: rtl;
+  text-align: right;
+}
+
+.about-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-box ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.about-box ul li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.suggestion-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.suggestion-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  resize: vertical;
+}
+
+.suggestion-box button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.suggestion-box button:hover {
+  background-color: #0056b3;
+}
+
+/* تنسيق النصوص الإنجليزية والإيموجي */
+.ltr {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: embed;
+}
+
+.emoji {
+  display: inline-block;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Media Queries لتحسين التجاوب */
+
+/* الشاشات الصغيرة (أقل من 576 بكسل) */
+@media (max-width: 576px) {
+  /* النافبار */
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-brand.logo {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links .nav-item {
+    margin: 5px 0;
+  }
+
+  .nav-links .nav-link {
+    font-size: 16px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .search-box input {
+    width: 70%;
+    height: 36px;
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .search-box button {
+    width: 30%;
+    height: 36px;
+    padding: 6px 10px;
+    font-size: 14px;
+    display: flex; /* تمركز النص */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* العناوين */
+  .content h2 {
+    font-size: 24px;
+  }
+
+  /* البطاقات */
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category, .pricing-card {
+    padding: 15px;
+  }
+
+  .category img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .category h3, .pricing-card h3 {
+    font-size: 18px;
+  }
+
+  .category p, .description {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 36px;
+  }
+
+  .duration {
+    font-size: 14px;
+  }
+
+  .trial-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* قائمة المميزات */
+  .features-list p {
+    font-size: 14px;
+  }
+
+  .features-list li {
+    font-size: 12px;
+  }
+
+  /* النافذة المنبثقة */
+  .modal-content {
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .modal-content button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* قسم About */
+  .about-box, .contact-box, .suggestion-box {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .about-box p, .contact-info p {
+    font-size: 16px;
+  }
+
+  .about-box ul li {
+    font-size: 14px;
+  }
+
+  .contact-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .suggestion-box textarea {
+    font-size: 14px;
+  }
+
+  .suggestion-box button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* الفوتر */
+  .footer {
+    padding: 15px 0;
+    font-size: 16px;
+  }
+
+  .footer a {
+    font-size: 16px;
+    margin: 0 8px;
+  }
+}
+
+/* الشاشات المتوسطة (576-768 بكسل) */
+@media (min-width: 576px) and (max-width: 768px) {
+  /* النافبار */
+  .navbar-brand.logo {
+    font-size: 26px;
+  }
+
+  .nav-links .nav-item {
+    margin: 0 10px;
+  }
+
+  .search-box {
+    width: 200px;
+    gap: 8px;
+  }
+
+  .search-box input {
+    height: 38px;
+    padding: 6px;
+    font-size: 15px;
+  }
+
+  .search-box button {
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 15px;
+    display: flex; /* تمركز النص */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* العناوين */
+  .content h2 {
+    font-size: 28px;
+  }
+
+  /* البطاقات */
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category, .pricing-card {
+    padding: 20px;
+  }
+
+  .category img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .category h3, .pricing-card h3 {
+    font-size: 20px;
+  }
+
+  .category p, .description {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 40px;
+  }
+
+  .duration {
+    font-size: 15px;
+  }
+
+  /* قائمة المميزات */
+  .features-list p {
+    font-size: 15px;
+  }
+
+  .features-list li {
+    font-size: 13px;
+  }
+
+  /* النافذة المنبثقة */
+  .modal-content {
+    max-width: 350px;
+  }
+
+  /* قسم About */
+  .contact-image img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* الشاشات الكبيرة (أكثر من 768 بكسل) */
+@media (min-width: 769px) {
+  /* النافبار */
+  .nav-links .nav-item {
+    margin: 0 15px;
+  }
+
+  .search-box {
+    width: 250px;
+  }
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.back-btn:hover {
+  background-color: #c82333;
+}
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.progress-fill {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+
+
+/* تنسيق شريط التقدم */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
