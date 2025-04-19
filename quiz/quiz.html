@@ -1,74 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover your digital passion</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/book.png">
-    <script src="question.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- شريط التنقل -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
-    <div class="container">
-      <a class="navbar-brand logo" href="front.html">DYDP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav nav-links mx-auto">
-          <li class="nav-item"><a class="nav-link" href="front.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        </ul>
-        <div class="search-box ms-auto">
-          <input type="text" placeholder="Search">
-          <button>Search</button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-    <!-- قسم الاختبار -->
-    <section class="content">
-        <h2>اختبار في <span id="category-name"></span></h2>
-        <div class="quiz-box">
-            <p>السؤال <span id="question-number"></span> من <span id="total-questions"></span></p>
-            <!-- شريط التقدم -->
-            <div class="progress-bar">
-                <div id="progress" class="progress-fill"></div>
-            </div>
-            <p id="question-text"></p>
-            <div id="options" class="options"></div>
-            <button id="next-btn" onclick="nextQuestion()" disabled>التالي</button>
-        </div>
-    </section>
-    <!-- النافذة المنبثقة للملاحظة -->
-    <div id="voiceOverModal" class="modal">
-      <div class="modal-content">
-          <span class="close-button" onclick="closeModal()">×</span>
-          <h3>ملاحظة مهمة</h3>
-          <p>📢 مجال التعليق الصوتي 85% موهبة والباقي تدريب عكس باقي المجالات، وهذا المجال من الأفضل أن تضيف له مجال السكربت رايتر لكي تخرج بأفضل نتيجة احترافية.</p>
-          <button onclick="closeModal()">متابعة</button>
-      </div>
-  </div>
-
-    <!-- الفوتر -->
-    <footer class="footer">
-        <p>© 2025 Quiz Game. جميع الحقوق محفوظة</p>
-        <p>
-            <a href="about.html">اتصل بنا</a> |
-            <a href="about.html">من نحن</a> |
-            <a href="privacy.html">سياسة الخصوصية</a>
-        </p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
