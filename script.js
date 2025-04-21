@@ -233,3 +233,49 @@ function getResultNote(percentage) {
         return "";
     }
 }
+// دالة لعرض/إخفاء خيارات المشاركة
+function toggleShareOptions() {
+  const shareOptions = document.getElementById('share-options');
+  shareOptions.style.display = shareOptions.style.display === 'block' ? 'none' : 'block';
+}
+
+// دالة للمشاركة على مواقع التواصل
+function shareTo(platform) {
+  const score = localStorage.getItem("score") || 0;
+  const category = document.getElementById('category-name-result').innerText;
+  const shareMessage = `حصلت على ${score}% في اختبار ${category} على DYDP! جرب الاختبار الآن: https://dydp-quiz.vercel.app`;
+  const encodedMessage = encodeURIComponent(shareMessage);
+  let shareUrl;
+
+  switch (platform) {
+      case 'facebook':
+          // إصلاح الرابط: إزالة العلامة الزائدة وتنسيق المعلمة u بشكل صحيح
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dydp-quiz.vercel.app')}&quote=${encodedMessage}`;
+          break;
+      case 'instagram':
+          // إنستغرام لا يدعم المشاركة المباشرة عبر رابط، لذا سنعتمد على نسخ النص
+          navigator.clipboard.writeText(shareMessage);
+          alert('تم نسخ الرسالة! يمكنك لصقها في إنستغرام.');
+          return;
+      case 'whatsapp':
+          shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+          break;
+      case 'twitter':
+          shareUrl = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
+          break;
+      default:
+          return;
+  }
+
+  window.open(shareUrl, '_blank');
+  document.getElementById('share-options').style.display = 'none'; // إغلاق القائمة بعد المشاركة
+}
+
+// إغلاق خيارات المشاركة عند النقر خارجها
+document.addEventListener('click', function(event) {
+  const shareOptions = document.getElementById('share-options');
+  const shareBtn = document.querySelector('.share-btn');
+  if (shareOptions && shareBtn && !shareBtn.contains(event.target) && !shareOptions.contains(event.target)) {
+      shareOptions.style.display = 'none';
+  }
+});
