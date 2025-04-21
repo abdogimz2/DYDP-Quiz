@@ -8,9 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/book.png"> <!-- رابط الأيقونة -->
-
     <!-- إضافة خط Poppins من Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <!-- إضافة Font Awesome لأيقونات مواقع التواصل -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <!-- شريط التنقل -->
@@ -35,29 +36,38 @@
     </div>
   </nav>
 
-    <!-- قسم النتيجة -->
-<!-- قسم النتيجة -->
-<section class="content">
-  <h2>نتيجتك في اختبار <span id="category-name-result"></span></h2>
-  <div class="result-box">
+  <!-- قسم النتيجة -->
+  <section class="content">
+    <h2>نتيجتك في اختبار <span id="category-name-result"></span></h2>
+    <div class="result-box">
       <h3>
-          <span id="score" dir="ltr"></span>
-     : نسبة نجاحك هي    
+        <span id="score" dir="ltr"></span>
+        : نسبة نجاحك هي    
       </h3>
       <p id="result-note" class="result-note"></p>
-      <button onclick="restartQuiz()" class="next-btn">العب مرة أخرى</button>
-  </div>
-</section>
-    <!-- الفوتر -->
-    <footer class="footer">
-        <p>© 2025 Quiz Game. جميع الحقوق محفوظة</p>
-        <p>
-            <a href="about.html">اتصل بنا</a> |
-            <a href="about.html">من نحن</a> |
-            <a href="privacy.html">سياسة الخصوصية</a>
-        </p>
-    </footer>
+      <div class="result-buttons">
+        <button onclick="restartQuiz()" class="next-btn">العب مرة أخرى</button>
+        <button class="share-btn" onclick="toggleShareOptions()">مشاركة</button>
+        <div class="share-options" id="share-options">
+          <a href="#" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+          <a href="#" onclick="shareTo('instagram')"><i class="fab fa-instagram"></i> إنستغرام</a>
+          <a href="#" onclick="shareTo('whatsapp')"><i class="fab fa-whatsapp"></i> واتساب</a>
+          <a href="#" onclick="shareTo('twitter')"><i class="fab fa-twitter"></i> تويتر</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- الفوتر -->
+  <footer class="footer">
+    <p>© 2025 Quiz Game. جميع الحقوق محفوظة</p>
+    <p>
+      <a href="about.html">اتصل بنا</a> |
+      <a href="about.html">من نحن</a> |
+      <a href="privacy.html">سياسة الخصوصية</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
