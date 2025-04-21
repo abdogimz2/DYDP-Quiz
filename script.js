@@ -66,6 +66,7 @@ function openPricingModal() {
     const modal = document.getElementById("pricingModal");
     if (modal) {
         modal.style.display = "flex";
+        modal.classList.add("show"); // إضافة الكلاس لتفعيل تأثير الانتقال
         document.body.classList.add("modal-open");
     }
 }
@@ -74,8 +75,11 @@ function openPricingModal() {
 function closePricingModal() {
     const modal = document.getElementById("pricingModal");
     if (modal) {
-        modal.style.display = "none";
-        document.body.classList.remove("modal-open");
+        modal.classList.remove("show"); // إزالة الكلاس لتفعيل تأثير الإغلاق
+        setTimeout(() => {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }, 300); // يتطابق مع مدة الانتقال في CSS
     }
 }
 
